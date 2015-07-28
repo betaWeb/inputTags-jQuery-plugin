@@ -1,6 +1,9 @@
 # inputTags-jQuery-plugin
 
 Plugin jQuery de gestion de tags.
+Permet d'ajouter, éditer et supprimer des tags depuis une liste de tags.
+
+Voir la [DEMO](http://codepen.io/betaweb/pen/PqdbMO/).
 
 ## Getting started
 
@@ -24,6 +27,8 @@ $('#tags').inputTags({
   tags: ['jQuery', 'tags', 'plugin'] // Custom tags list
 });
 ```
+
+## Advanced usage
 
 **Create with tags autocomplete**
 ```js
