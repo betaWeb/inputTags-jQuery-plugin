@@ -69,7 +69,7 @@ $('#tags').inputTags({
 });
 ```
 <br/>
-Add events after plugin initialization:
+**Add events after plugin initialization**
 ```js
 $('#tags').inputTags().on('change', function($elem) {
   console.log('Event called on item change', $elem);
