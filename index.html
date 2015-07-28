@@ -8,6 +8,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/inputTags.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/app.css" media="screen">
   </head>
   <body>
@@ -20,20 +21,20 @@
 
     <section class="main-content">
 
-    <h2 class="uppercase"><a id="inputtags-jquery-plugin" class="anchor" href="#inputtags-jquery-plugin" aria-hidden="true"><span class="octicon octicon-link"></span></a>Presentation</h2>
+    <h2 class="uppercase center"><a id="inputtags-jquery-plugin" class="anchor" href="#inputtags-jquery-plugin" aria-hidden="true"><span class="octicon octicon-link"></span></a>- Presentation -</h2>
 
 <p>A simple jQuery plugin allowing to add, edit or delete tags in a tags list.</p>
 
 <br>
 
-<h2 class="uppercase"><a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+<h2 class="uppercase center"><a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>- Installation -</h2>
 <p class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
 &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>/path/to/inputTags.jquery.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
 </pre></p>
 
 <br>
 
-<h2 class="uppercase"><a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting started</h2>
+<h2 class="uppercase center"><a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>- Getting started -</h2>
 <p>Very simple plugin startup.</p>
 <p><strong>HTML</strong>:</p>
 
@@ -45,7 +46,20 @@
 
 <br>
 
-<h2 class="uppercase"><a id="basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic usage</h2>
+<h2 class="uppercase center"><a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>- Demonstration -</h2>
+<p>Below, you can add, edit and remove tags from the list.</p>
+<div class="demo">
+  <input type="text" id="tags">
+</div>
+
+<p>Source:</p>
+<div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags({
+  tags<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>jQuery<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>tags<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>plugin<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Javascript<span class="pl-pds">'</span></span>],<br>  <span class="pl-c">max<span class="pl-k">:</span> <span class="pl-c1">8</span></span>
+});</pre></div>
+
+<br>
+
+<h2 class="uppercase center"><a id="basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>- Basic usage -</h2>
 
 <p><strong>Initialize plugin with custom tags</strong></p>
 <p>Allows you to add custom tags on plugin initialization.</p>
@@ -56,7 +70,7 @@
 
 <br>
 
-<h2 class="uppercase"><a id="advanced-usage" class="anchor" href="#advanced-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Advanced usage</h2>
+<h2 class="uppercase center"><a id="advanced-usage" class="anchor" href="#advanced-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>- Advanced usage -</h2>
 
 <p><strong>Initialize plugin with tags autocomplete</strong></p>
 <p>Allows you to add a custom list from which the user can choose one or more tags.</p>
@@ -67,10 +81,10 @@
   }
 });</pre></div>
 
-<h3><a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h3>
-<p><strong>...</strong></p>
+<h3 class="uppercase"><a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h3>
+<p><strong>Coming soon...</strong></p>
 
-<h3><a id="events" class="anchor" href="#events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Events</h3>
+<h3 class="uppercase"><a id="events" class="anchor" href="#events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Events</h3>
 
 <p><strong>Add events listener on plugin initialization</strong></p>
 <div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags({
