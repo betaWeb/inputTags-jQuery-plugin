@@ -1,11 +1,16 @@
 # inputTags-jQuery-plugin
+## Presentation
+[inputTags.js](http://betaweb.github.io/inputTags-jQuery-plugin/) is a simple jQuery plugin allowing to add, edit or remove tags in a tags list.
 
-Plugin jQuery de gestion de tags.
-Permet d'ajouter, éditer et supprimer des tags depuis une liste de tags.
-
-Voir la [DEMO](http://codepen.io/betaweb/pen/PqdbMO/).
+## Installation
+Make sure you include the script after the jQuery library.
+```html
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="/path/to/inputTags.jquery.js"></script>
+```
 
 ## Getting started
+Setting up [inputTags.js](http://betaweb.github.io/inputTags-jQuery-plugin/) is very easy. You just have to add this few lines below and that's it !
 
 **HTML**:
 
@@ -21,7 +26,8 @@ $('#tags').inputTags();
 
 ## Basic usage
 
-**Create with custom tags**
+**Initialize plugin with custom tags**
+Allows you to add custom tags on plugin initialization.
 ```js
 $('#tags').inputTags({
   tags: ['jQuery', 'tags', 'plugin'] // Custom tags list
@@ -31,6 +37,7 @@ $('#tags').inputTags({
 ## Advanced usage
 
 **Initialize plugin with tags autocomplete**
+Allows you to add a custom list from which the user can choose one or more tags.
 ```js
 $('#tags').inputTags({
   autocomplete: {
@@ -40,6 +47,7 @@ $('#tags').inputTags({
 ```
 
 ### Methods
+**Coming soon...**
 
 ### Events
 **Add events listener on plugin initialization**
