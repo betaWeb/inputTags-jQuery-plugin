@@ -40,6 +40,7 @@ $('#tags').inputTags({
 ```
 
 **Add events**
+<br/><br/>
 Add events on plugin initialization:
 ```js
 $('#tags').inputTags({
@@ -66,14 +67,14 @@ $('#tags').inputTags({
     }
 });
 ```
-
+<br/>
 Add events after plugin initialization:
 ```js
 $('#tags').inputTags().on('change', function($elem) {
   console.log('Event called on item change', $elem);
 });
 ```
-OR
+same as:
 ```js
 $('#tags').inputTags('event', 'change', function($elem) {
   console.log('Event called on item change', $elem);
