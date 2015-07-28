@@ -8,6 +8,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/custom.css" media="screen">
   </head>
   <body>
     <section class="page-header">
@@ -18,19 +19,22 @@
     </section>
 
     <section class="main-content">
-      <h1>
-<a id="inputtags-jquery-plugin" class="anchor" href="#inputtags-jquery-plugin" aria-hidden="true"><span class="octicon octicon-link"></span></a>InputTags jQuery Plugin</h1>
 
-<p>Plugin jQuery de gestion de tags.<br>
-Permet d'ajouter, éditer et supprimer des tags depuis une liste de tags.</p>
+    <h2><a id="inputtags-jquery-plugin" class="anchor" href="#inputtags-jquery-plugin" aria-hidden="true"><span class="octicon octicon-link"></span></a>Presentation</h2>
 
-<h2>Ci-dessous une live démo:</h2>
-<p data-height="406" data-theme-id="17330" data-slug-hash="PqdbMO" data-default-tab="result" data-user="betaweb" class='codepen'>See the Pen <a href='http://codepen.io/betaweb/pen/PqdbMO/'>jQuery tags plugin V2</a> by Cyprien (<a href='http://codepen.io/betaweb'>@betaweb</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<p>A simple jQuery plugin allowing to add, edit or delete tags in a tags list.</p>
 
-<h2>
-<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting started</h2>
+<br>
 
+<h2><a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+<p class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>/path/to/inputTags.jquery.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+</pre></p>
+
+<br>
+
+<h2><a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting started</h2>
+<p>Very simple plugin startup.</p>
 <p><strong>HTML</strong>:</p>
 
 <div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>tags<span class="pl-pds">"</span></span> /&gt;</pre></div>
@@ -39,19 +43,23 @@ Permet d'ajouter, éditer et supprimer des tags depuis une liste de tags.</p>
 
 <div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags();</pre></div>
 
-<h2>
-<a id="basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic usage</h2>
+<br>
 
-<p><strong>Create with custom tags</strong></p>
+<h2><a id="basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic usage</h2>
+
+<p><strong>Initialize plugin with custom tags</strong></p>
+<p>Allows you to add custom tags on plugin initialization.</p>
 
 <div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags({
   tags<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>jQuery<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>tags<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>plugin<span class="pl-pds">'</span></span>] <span class="pl-c">// Custom tags list</span>
 });</pre></div>
 
-<h2>
-<a id="advanced-usage" class="anchor" href="#advanced-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Advanced usage</h2>
+<br>
+
+<h2><a id="advanced-usage" class="anchor" href="#advanced-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Advanced usage</h2>
 
 <p><strong>Initialize plugin with tags autocomplete</strong></p>
+<p>Allows you to add a custom list from which the user can choose one or more tags.</p>
 
 <div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags({
   autocomplete<span class="pl-k">:</span> {
@@ -59,14 +67,12 @@ Permet d'ajouter, éditer et supprimer des tags depuis une liste de tags.</p>
   }
 });</pre></div>
 
-<h3>
-<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h3>
+<h3><a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h3>
+<p><strong>...</strong></p>
 
-<h3>
-<a id="events" class="anchor" href="#events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Events</h3>
+<h3><a id="events" class="anchor" href="#events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Events</h3>
 
 <p><strong>Add events listener on plugin initialization</strong></p>
-
 <div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags({
     <span class="pl-en">init</span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">$elem</span>) {
       <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Event called on plugin init<span class="pl-pds">'</span></span>, $elem);
@@ -110,7 +116,8 @@ Permet d'ajouter, éditer et supprimer des tags depuis une liste de tags.</p>
 
     </section>
 
-  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/inputTags.jquery.js"></script>
   </body>
 </html>
 
