@@ -21,7 +21,7 @@ $('#tags').inputTags();
 **Create with custom tags**
 ```js
 $('#tags').inputTags({
-  tags: ['jQuery', 'tags', 'plugin']
+  tags: ['jQuery', 'tags', 'plugin'] // Custom tags list
 });
 ```
 
@@ -29,7 +29,7 @@ $('#tags').inputTags({
 ```js
 $('#tags').inputTags({
   autocomplete: {
-    values: ['Pellentesque', 'habitant', 'morbi', 'tristique', 'senectus', 'netus', 'malesuada', 'fames', 'turpis', 'egestas', 'Vestibulum']
+    values: ['Pellentesque', 'habitant', 'morbi', 'tristique', 'senectus'] // autocomplete list
   }
 });
 ```
