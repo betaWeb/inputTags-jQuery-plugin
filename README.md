@@ -1,4 +1,6 @@
-# inputTags-jQuery-plugin
+# inputTags.js
+##### jQuery plugin
+
 ## Presentation
 [inputTags.js](http://betaweb.github.io/inputTags-jQuery-plugin/) is a simple jQuery plugin allowing to add, edit or remove tags in a tags list.
 
