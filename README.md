@@ -38,3 +38,44 @@ $('#tags').inputTags({
   }
 });
 ```
+
+**Add events**
+Add events on plugin initialization:
+```js
+$('#tags').inputTags({
+    init: function($elem) {
+      console.log('Event called on plugin init', $elem);
+    },
+    create: function() {
+      console.log('Event called when an item is created');
+    },
+    update: function() {
+      console.log('Event called when an item is updated');
+    },
+    destroy: function() {
+      console.log('Event called when an item is deleted');
+    },
+    selected: function() {
+      console.log('Event called when an item is selected');
+    },
+    unselected: function() {
+      console.log('Event called when an item is unselected');
+    },
+    change: function($elem) {
+      console.log('Event called on item change', $elem);
+    }
+});
+```
+
+Add events after plugin initialization:
+```js
+$('#tags').inputTags().on('change', function($elem) {
+  console.log('Event called on item change', $elem);
+});
+```
+OR
+```js
+$('#tags').inputTags('event', 'change', function($elem) {
+  console.log('Event called on item change', $elem);
+});
+```
