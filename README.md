@@ -30,7 +30,7 @@ $('#tags').inputTags({
 
 ## Advanced usage
 
-**Create with tags autocomplete**
+**Initialize plugin with tags autocomplete**
 ```js
 $('#tags').inputTags({
   autocomplete: {
@@ -38,8 +38,8 @@ $('#tags').inputTags({
   }
 });
 ```
-
-**Add events**
+<br/>
+**Add events listener**
 <br/><br/>
 Add events on plugin initialization:
 ```js
