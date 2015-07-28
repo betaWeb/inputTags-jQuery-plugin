@@ -1,7 +1,131 @@
+@import url(http://fonts.googleapis.com/css?family=Kaushan+Script);
+
+@main: #19BC9C;
+@white: #fff;
+@black: #000;
+@dark: #2C3433;
+@border: #ddd;
+
+@header: 64px;
+
 .uppercase{ text-transform: uppercase !important; }
 .center{ text-align: center !important; }
-h1, h2, h3, h4, h5, h6, a{ color: #19BC9C !important; }
+.pull-right{ float: right !important; }
+
+h2, h3, h4, h5, h6, a, .color{ color: @main !important; }
 h2{ margin-top: 1rem; }
+
+body{ padding-top: 80px; }
+
+div.overlay{
+	position: fixed;
+	display: none;
+	top: 0; right: 0; bottom: 0; left: 0;
+	background-color: fade(@dark, 10%);
+	z-index: 9;
+}
+
+/* PAGE HEADER */
+header{
+	position: fixed;
+	height: @header;
+	top: 0; right: 0; left: 0;
+	padding: 0 64px;
+	background-color: transparent;
+	z-index: 10;
+
+	a.logo{
+		float: left;
+		height: @header;
+		line-height: @header;
+		margin: 0; padding: 0;
+		color: @dark !important;
+		font-size: 1.75rem;
+		cursor: pointer;
+		font-family: 'Kaushan Script', cursive;
+
+		&:hover{ text-decoration: none; }
+	}
+
+	div.right-menu{
+		a{
+			height: @header;
+			line-height: @header;
+			margin: 0 12px;
+			color: @dark !important;
+			font-weight: 600;
+			transition: color 0.3s;
+			font-size: 32px;
+
+			&.menu-link{
+				font-size: 14px;
+				float: left;
+			}
+
+			&:hover{
+				text-decoration: none;
+				color: fade(@dark, 50%) !important;
+			}
+		}
+	}
+
+	div.mobile-menu-trigger{
+		display: none;
+		position: absolute;
+		top: 50%; left: 16px;
+		font-size: 24px;
+		color: @dark;
+		cursor: pointer;
+		transform: translateY(-50%);
+	}
+
+	@media all and (max-width: 768px){
+		background-color: @white;
+
+		a.logo{
+			width: 100%;
+			text-align: center;
+		}
+
+		div.right-menu{
+			position: fixed;
+			width: 66.6666%;
+			left: 0; top: @header; bottom: 0;
+			background-color: @white;
+			z-index: 10;
+			transform: translateX(-100%);
+			transition: transform 0.4s;
+
+			a{
+				float: left;
+				display: block;
+				width: 100%; height: @header / 2;
+				line-height: @header / 2;
+				margin: 8px 0;
+				text-align: center;
+				font-size: 16px;
+				text-transform: uppercase;
+
+				&.gh-link-first, &.gh-link-last{
+					width: 50%;
+					display: inline-block;
+					margin-top: 12px; padding: 0 24px;
+					font-size: 32px;
+
+					&.gh-link-first{ text-align: right; }
+					&.gh-link-last{ text-align: left; }
+				}
+			}
+
+			&.is-active{ transform: translateX(0); }
+		}
+		div.mobile-menu-trigger{ display: block; }
+	}
+
+	@media all and (max-width: 480px){
+		div.right-menu{ width: 100%; }
+	}
+}
 
 input.inputTags-field{
 	width: 8rem;

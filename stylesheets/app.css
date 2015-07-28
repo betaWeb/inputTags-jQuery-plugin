@@ -1,20 +1,147 @@
+@import url(http://fonts.googleapis.com/css?family=Kaushan+Script);
 .uppercase {
   text-transform: uppercase !important;
 }
 .center {
   text-align: center !important;
 }
-h1,
+.pull-right {
+  float: right !important;
+}
 h2,
 h3,
 h4,
 h5,
 h6,
-a {
-  color: #19BC9C !important;
+a,
+.color {
+  color: #19bc9c !important;
 }
 h2 {
   margin-top: 1rem;
+}
+body {
+  padding-top: 80px;
+}
+div.overlay {
+  position: fixed;
+  display: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(44, 52, 51, 0.1);
+  z-index: 9;
+}
+/* PAGE HEADER */
+header {
+  position: fixed;
+  height: 64px;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 0 64px;
+  background-color: transparent;
+  z-index: 10;
+}
+header a.logo {
+  float: left;
+  height: 64px;
+  line-height: 64px;
+  margin: 0;
+  padding: 0;
+  color: #2c3433 !important;
+  font-size: 1.75rem;
+  cursor: pointer;
+  font-family: 'Kaushan Script', cursive;
+}
+header a.logo:hover {
+  text-decoration: none;
+}
+header div.right-menu a {
+  height: 64px;
+  line-height: 64px;
+  margin: 0 12px;
+  color: #2c3433 !important;
+  font-weight: 600;
+  transition: color 0.3s;
+  font-size: 32px;
+}
+header div.right-menu a.menu-link {
+  font-size: 14px;
+  float: left;
+}
+header div.right-menu a:hover {
+  text-decoration: none;
+  color: rgba(44, 52, 51, 0.5) !important;
+}
+header div.mobile-menu-trigger {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  font-size: 24px;
+  color: #2c3433;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+@media all and (max-width: 768px) {
+  header {
+    background-color: #ffffff;
+  }
+  header a.logo {
+    width: 100%;
+    text-align: center;
+  }
+  header div.right-menu {
+    position: fixed;
+    width: 66.6666%;
+    left: 0;
+    top: 64px;
+    bottom: 0;
+    background-color: #ffffff;
+    z-index: 10;
+    transform: translateX(-100%);
+    transition: transform 0.4s;
+  }
+  header div.right-menu a {
+    float: left;
+    display: block;
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+    margin: 8px 0;
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  header div.right-menu a.gh-link-first,
+  header div.right-menu a.gh-link-last {
+    width: 50%;
+    display: inline-block;
+    margin-top: 12px;
+    padding: 0 24px;
+    font-size: 32px;
+  }
+  header div.right-menu a.gh-link-first.gh-link-first,
+  header div.right-menu a.gh-link-last.gh-link-first {
+    text-align: right;
+  }
+  header div.right-menu a.gh-link-first.gh-link-last,
+  header div.right-menu a.gh-link-last.gh-link-last {
+    text-align: left;
+  }
+  header div.right-menu.is-active {
+    transform: translateX(0);
+  }
+  header div.mobile-menu-trigger {
+    display: block;
+  }
+}
+@media all and (max-width: 480px) {
+  header div.right-menu {
+    width: 100%;
+  }
 }
 input.inputTags-field {
   width: 8rem;
