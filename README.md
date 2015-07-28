@@ -38,10 +38,11 @@ $('#tags').inputTags({
   }
 });
 ```
-<br/>
-**Add events listener**
-<br/><br/>
-Add events on plugin initialization:
+
+### Methods
+
+### Events
+**Add events listener on plugin initialization**
 ```js
 $('#tags').inputTags({
     init: function($elem) {
