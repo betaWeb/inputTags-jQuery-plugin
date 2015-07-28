@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8">
-    <title>InputTags jQuery Plugin | betaWeb</title>
+    <title>inputTags.js | jQuery Plugin | betaWeb</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -15,12 +15,12 @@
   <body>
     <div id="overlay" class="overlay"></div>
     <header>
-      <a class="logo">inputTags.js</a>
+      <a class="logo font">inputTags.js</a>
 
       <div id="right-menu" class="right-menu pull-right">
-        <a href="#" class="menu-link">Getting started</a>
-        <a href="#" class="menu-link">Docs</a>
-        <a href="#" class="menu-link">Examples</a>
+        <a href="#getting-started" class="menu-link">Getting started</a>
+        <!-- <a href="#" class="menu-link">Docs</a> -->
+        <!-- <a href="#" class="menu-link">Examples</a> -->
         <a href="https://github.com/betaWeb/inputTags-jQuery-plugin" target="_blank" class="fa fa-github gh-link-first" title="GitHub"></a>
         <a href="https://github.com/betaWeb/inputTags-jQuery-plugin/archive/master.zip" class="fa fa-cloud-download gh-link-last" title="Download Latest as .zip"></a>
       </div>
@@ -29,21 +29,22 @@
 
     <section class="main-content">
 
-    <h2 class="uppercase center"><a id="inputtags-jquery-plugin" class="anchor" href="#inputtags-jquery-plugin" aria-hidden="true"><span class="octicon octicon-link"></span></a>- Presentation -</h2>
+    <h2 class="font center"><a id="inputtags-jquery-plugin" class="anchor" href="#inputtags-jquery-plugin" aria-hidden="true"><span class="octicon octicon-link"></span></a>Presentation</h2>
 
-<p>A simple jQuery plugin allowing to add, edit or delete tags in a tags list.</p>
+<p class="presentation"><a href="https://github.com/betaWeb/inputTags-jQuery-plugin" target="_blank" class="color">inputTags.js</a> is a simple jQuery plugin allowing to add, edit or remove tags in a tags list.</p>
 
 <br>
 
-<h2 class="uppercase center"><a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>- Installation -</h2>
+<h2 class="font center"><a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+<p>Make sure you include the script after the jQuery library.</p>
 <p class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
 &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>/path/to/inputTags.jquery.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
 </pre></p>
 
 <br>
 
-<h2 class="uppercase center"><a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>- Getting started -</h2>
-<p>Very simple plugin startup.</p>
+<h2 class="font center"><a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting started</h2>
+<p>Setting up <a href="https://github.com/betaWeb/inputTags-jQuery-plugin" target="_blank" class="color">inputTags.js</a> is very easy. You just have to add this few lines below and that's it !</p>
 <p><strong>HTML</strong>:</p>
 
 <div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>tags<span class="pl-pds">"</span></span> /&gt;</pre></div>
@@ -54,7 +55,7 @@
 
 <br>
 
-<h2 class="uppercase center"><a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>- Demonstration -</h2>
+<h2 class="font center"><a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demonstration</h2>
 <p>Below, you can add, edit and remove tags from the list.</p>
 <div class="demo">
   <input type="text" id="tags">
@@ -64,10 +65,11 @@
 <div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags({
   tags<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>jQuery<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>tags<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>plugin<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Javascript<span class="pl-pds">'</span></span>],<br>  <span class="pl-c">max<span class="pl-k">:</span> <span class="pl-c1">8</span></span>
 });</pre></div>
+<p>The plugin has been initialized with 2 options:<br>&nbsp;&nbsp;&nbsp;<strong>tags</strong> -> Array of custom tags<br>&nbsp;&nbsp;&nbsp;<strong>max</strong> -> maximum number of tags that the user can enter</p>
 
 <br>
 
-<h2 class="uppercase center"><a id="basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>- Basic usage -</h2>
+<h2 class="font center"><a id="basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic usage</h2>
 
 <p><strong>Initialize plugin with custom tags</strong></p>
 <p>Allows you to add custom tags on plugin initialization.</p>
@@ -78,7 +80,7 @@
 
 <br>
 
-<h2 class="uppercase center"><a id="advanced-usage" class="anchor" href="#advanced-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>- Advanced usage -</h2>
+<h2 class="font center"><a id="advanced-usage" class="anchor" href="#advanced-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Advanced usage</h2>
 
 <p><strong>Initialize plugin with tags autocomplete</strong></p>
 <p>Allows you to add a custom list from which the user can choose one or more tags.</p>
@@ -89,10 +91,10 @@
   }
 });</pre></div>
 
-<h3 class="uppercase"><a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h3>
+<h2 class="font center"><a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h2>
 <p><strong>Coming soon...</strong></p>
 
-<h3 class="uppercase"><a id="events" class="anchor" href="#events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Events</h3>
+<h2 class="font center"><a id="events" class="anchor" href="#events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Events</h2>
 
 <p><strong>Add events listener on plugin initialization</strong></p>
 <div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags({
@@ -133,7 +135,7 @@
 });</pre></div>
 
       <footer class="site-footer">
-        <span class="site-footer-owner">Le plugin jQuery <a href="https://github.com/betaWeb/inputTags-jQuery-plugin">InputTags</a> est maintenu par <a href="https://github.com/betaWeb">betaWeb</a>.</span>
+        <span class="site-footer-owner">Le plugin jQuery <a href="https://github.com/betaWeb/inputTags-jQuery-plugin" target="_blank">InputTags.js</a> est maintenu par <a href="https://github.com/betaWeb" target="_blank">betaWeb</a>.</span>
       </footer>
 
     </section>

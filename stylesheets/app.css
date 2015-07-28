@@ -8,6 +8,9 @@
 .pull-right {
   float: right !important;
 }
+.font {
+  font-family: 'Kaushan Script', cursive;
+}
 h2,
 h3,
 h4,
@@ -19,6 +22,14 @@ a,
 }
 h2 {
   margin-top: 1rem;
+}
+a {
+  transition: color 0.3s;
+}
+a:hover {
+  text-decoration: none !important;
+  cursor: pointer;
+  color: rgba(25, 188, 156, 0.5) !important;
 }
 body {
   padding-top: 80px;
@@ -53,10 +64,6 @@ header a.logo {
   color: #2c3433 !important;
   font-size: 1.75rem;
   cursor: pointer;
-  font-family: 'Kaushan Script', cursive;
-}
-header a.logo:hover {
-  text-decoration: none;
 }
 header div.right-menu a {
   height: 64px;
@@ -72,7 +79,6 @@ header div.right-menu a.menu-link {
   float: left;
 }
 header div.right-menu a:hover {
-  text-decoration: none;
   color: rgba(44, 52, 51, 0.5) !important;
 }
 header div.mobile-menu-trigger {

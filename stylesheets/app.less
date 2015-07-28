@@ -11,9 +11,20 @@
 .uppercase{ text-transform: uppercase !important; }
 .center{ text-align: center !important; }
 .pull-right{ float: right !important; }
+.font{ font-family: 'Kaushan Script', cursive; }
 
 h2, h3, h4, h5, h6, a, .color{ color: @main !important; }
 h2{ margin-top: 1rem; }
+
+a{
+	transition: color 0.3s;
+
+	&:hover{
+		text-decoration: none !important;
+		cursor: pointer;
+		color: fade(@main, 50%) !important;
+	}
+}
 
 body{ padding-top: 80px; }
 
@@ -42,9 +53,6 @@ header{
 		color: @dark !important;
 		font-size: 1.75rem;
 		cursor: pointer;
-		font-family: 'Kaushan Script', cursive;
-
-		&:hover{ text-decoration: none; }
 	}
 
 	div.right-menu{
@@ -62,10 +70,7 @@ header{
 				float: left;
 			}
 
-			&:hover{
-				text-decoration: none;
-				color: fade(@dark, 50%) !important;
-			}
+			&:hover{ color: fade(@dark, 50%) !important; }
 		}
 	}
 
