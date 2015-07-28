@@ -26,7 +26,21 @@ a{
 	}
 }
 
-body{ padding-top: 80px; }
+.header-block{
+	position: relative;
+	margin: 3rem 0 !important;
+
+	&:before{
+		position: absolute;
+		content: '';
+		bottom: -16px; left: 50%;
+		width: 32px; height: 3px;
+		transform: translateX(-50%);
+		background-color: fade(@main, 50%);
+	}
+}
+
+body{ padding-top: 16px; }
 
 div.overlay{
 	position: fixed;
@@ -41,8 +55,8 @@ header{
 	position: fixed;
 	height: @header;
 	top: 0; right: 0; left: 0;
-	padding: 0 64px;
-	background-color: transparent;
+	padding: 0 12.5%;
+	background-color: fade(@white, 90%);
 	z-index: 10;
 
 	a.logo{
@@ -51,7 +65,7 @@ header{
 		line-height: @header;
 		margin: 0; padding: 0;
 		color: @dark !important;
-		font-size: 1.75rem;
+		font-size: 2rem;
 		cursor: pointer;
 	}
 
@@ -128,6 +142,8 @@ header{
 	}
 
 	@media all and (max-width: 480px){
+		padding: 0 64px;
+
 		div.right-menu{ width: 100%; }
 	}
 }

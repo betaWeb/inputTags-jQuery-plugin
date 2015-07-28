@@ -31,8 +31,22 @@ a:hover {
   cursor: pointer;
   color: rgba(25, 188, 156, 0.5) !important;
 }
+.header-block {
+  position: relative;
+  margin: 3rem 0 !important;
+}
+.header-block:before {
+  position: absolute;
+  content: '';
+  bottom: -16px;
+  left: 50%;
+  width: 32px;
+  height: 3px;
+  transform: translateX(-50%);
+  background-color: rgba(25, 188, 156, 0.5);
+}
 body {
-  padding-top: 80px;
+  padding-top: 16px;
 }
 div.overlay {
   position: fixed;
@@ -51,8 +65,8 @@ header {
   top: 0;
   right: 0;
   left: 0;
-  padding: 0 64px;
-  background-color: transparent;
+  padding: 0 12.5%;
+  background-color: rgba(255, 255, 255, 0.9);
   z-index: 10;
 }
 header a.logo {
@@ -62,7 +76,7 @@ header a.logo {
   margin: 0;
   padding: 0;
   color: #2c3433 !important;
-  font-size: 1.75rem;
+  font-size: 2rem;
   cursor: pointer;
 }
 header div.right-menu a {
@@ -145,6 +159,9 @@ header div.mobile-menu-trigger {
   }
 }
 @media all and (max-width: 480px) {
+  header {
+    padding: 0 64px;
+  }
   header div.right-menu {
     width: 100%;
   }
