@@ -254,8 +254,11 @@
               }
 
               if (self._exists(value)) {
+                self.$input.removeClass('is-autocomplete');
                 self._errors('exists');
+
                 var $tag = $('[data-tag="' + value + '"]', self.$list);
+
                 $tag.addClass('is-exists');
 
                 setTimeout(function() {
@@ -436,12 +439,13 @@
               self.$autocomplete = $('<ul>').addClass(self.AUTOCOMPLETE_LIST_CLASS);
 
               self._autocomplete()._get('values').forEach(function(v, k) {
-                var $item = $.inArray(v, self.tags) > 0 ? $(self.AUTOCOMPLETE_ITEM_CONTENT.replace('%s', v)).addClass('is-disabled') : $(self.AUTOCOMPLETE_ITEM_CONTENT.replace('%s', v));
+                var $item = $.inArray(v, self.tags) >= 0 ? $(self.AUTOCOMPLETE_ITEM_CONTENT.replace('%s', v)).addClass('is-disabled') : $(self.AUTOCOMPLETE_ITEM_CONTENT.replace('%s', v));
                 $item.appendTo(self.$autocomplete);
               });
 
               self.$autocomplete.off('click').on('click', '.' + self.AUTOCOMPLETE_ITEM_CLASS, function() {
                 var $item = $(this);
+
                 if ($item.hasClass('is-disabled')) {
                   return false;
                 }
