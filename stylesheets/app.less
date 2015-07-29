@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Kaushan+Script);
 
-@main: #19BC9C;
+@main: fade(#19BC9C, 95%); //rgba(25, 188, 156, 0.95)
 @white: #fff;
 @black: #000;
 @dark: #2C3433;
@@ -26,6 +26,11 @@ a{
 	}
 }
 
+pre{
+	border: none !important;
+	border-radius: 0 !important;
+}
+
 .header-block{
 	position: relative;
 	margin: 3rem 0 !important;
@@ -34,9 +39,9 @@ a{
 		position: absolute;
 		content: '';
 		bottom: -16px; left: 50%;
-		width: 32px; height: 3px;
+		width: 32px; height: 2px;
 		transform: translateX(-50%);
-		background-color: fade(@main, 50%);
+		background-color: @main;
 	}
 }
 
@@ -48,6 +53,14 @@ div.overlay{
 	top: 0; right: 0; bottom: 0; left: 0;
 	background-color: fade(@dark, 10%);
 	z-index: 9;
+}
+
+div.scroll-catcher{
+	position: fixed;
+	width: 100%; height: 1px;
+	top: 25%; left: 0; right: 0;
+	opacity: 0;
+	transform: translateY(-25%);
 }
 
 /* PAGE HEADER */
@@ -82,6 +95,8 @@ header{
 			&.menu-link{
 				font-size: 14px;
 				float: left;
+
+				&.is-active{ color: @main !important; }
 			}
 
 			&:hover{ color: fade(@dark, 50%) !important; }
@@ -147,6 +162,18 @@ header{
 		div.right-menu{ width: 100%; }
 	}
 }
+
+.demo-title:before{
+	content: '\f105';
+	margin: 0 8px;
+	vertical-align: baseline;
+	font-family: 'fontAwesome';
+	font-size: 18px;
+	font-weight: 600;
+	color: @main;
+}
+
+.demo{ margin-bottom: 8px; }
 
 input.inputTags-field{
 	width: 8rem;

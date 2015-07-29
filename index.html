@@ -14,14 +14,15 @@
   </head>
   <body>
     <div id="overlay" class="overlay"></div>
+    <div id="scroll-catcher" class="scroll-catcher"></div>
     <header>
-      <a class="logo font">inputTags.js</a>
+      <a class="logo font" href="#home">inputTags.js</a>
 
       <div id="right-menu" class="right-menu pull-right">
         <a href="#getting-started" class="menu-link">Getting started</a>
-        <a href="#" class="menu-link">Docs</a>
-        <a href="#" class="menu-link">Examples</a>
-        <a href="https://github.com/betaWeb/inputTags-jQuery-plugin" target="_blank" class="fa fa-github gh-link-first" title="GitHub"></a>
+        <a href="#examples" class="menu-link">Examples</a>
+        <a href="#doc" class="menu-link">Documentation</a>
+        <a href="https://github.com/betaWeb/inputTags-jQuery-plugin" target="_blank" class="fa fa-github gh-link-first" title="GitHub repository"></a>
         <a href="https://github.com/betaWeb/inputTags-jQuery-plugin/archive/master.zip" class="fa fa-cloud-download gh-link-last" title="Download Latest as .zip"></a>
       </div>
       <div id="mobile-menu-trigger" class="mobile-menu-trigger fa fa-bars"></div>
@@ -29,79 +30,120 @@
 
     <section class="main-content">
 
-    <h2 class="font center header-block"><a id="inputtags-jquery-plugin" class="anchor" href="#inputtags-jquery-plugin" aria-hidden="true"><span class="octicon octicon-link"></span></a>Presentation</h2>
+        <article id="home">
+            <h2 class="font center header-block"><a class="anchor" href="#home" aria-hidden="true"><span class="octicon octicon-link"></span></a>Presentation</h2>
 
-<p class="presentation"><a href="https://github.com/betaWeb/inputTags-jQuery-plugin" target="_blank" class="color">inputTags.js</a> is a simple jQuery plugin allowing to add, edit or remove tags in a tags list.</p>
+            <p class="presentation"><a href="https://github.com/betaWeb/inputTags-jQuery-plugin" target="_blank" class="color">inputTags.js</a> is a simple jQuery plugin allowing to add, edit or remove tags in a tags list.</p>
 
-<br>
+            <br>
 
-<h2 class="font center header-block"><a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
-<p>Make sure you include the script after the jQuery library.</p>
-<p class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
-&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>/path/to/inputTags.jquery.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
-</pre></p>
+            <h2 class="font center header-block"><a id="Installation" class="anchor" href="#Installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+            <p>Make sure you include the script after the jQuery library.</p>
+            <p class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+            &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>/path/to/inputTags.jquery.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+            </pre></p>
+        </article>
 
-<br>
+        <br>
 
-<h2 class="font center header-block"><a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting started</h2>
-<p>Setting up <a href="https://github.com/betaWeb/inputTags-jQuery-plugin" target="_blank" class="color">inputTags.js</a> is very easy. You just have to add this few lines below and that's it !</p>
-<p><strong>HTML</strong>:</p>
+        <article id="getting-started">
+            <h2 class="font center header-block"><a class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting started</h2>
+            <p>Setting up <a href="https://github.com/betaWeb/inputTags-jQuery-plugin" target="_blank" class="color">inputTags.js</a> is very easy. You just have to add this few lines below and that's it !</p>
+            <p><strong>HTML</strong>:</p>
 
-<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>tags<span class="pl-pds">"</span></span> /&gt;</pre></div>
+            <div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>tags<span class="pl-pds">"</span></span> /&gt;</pre></div>
 
-<p><strong>JS</strong>:</p>
+            <p><strong>JS</strong>:</p>
 
-<div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags();</pre></div>
+            <div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags();</pre></div>
+        </article>
+        <br>
 
-<br>
+        <article id="examples">
+            <h2 class="font center header-block"><a class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Try it !</h2>
+            <p>Below, you can add, edit and remove tags from lists.</p><br>
+            <p class="demo-title">Basic example :</p>
+            <div class="demo">
+              <input type="text" id="inputTags_d1" />
+            </div>
 
-<h2 class="font center header-block"><a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demonstration</h2>
-<p>Below, you can add, edit and remove tags from the list.</p>
-<div class="demo">
-  <input type="text" id="tags">
-</div>
+            <div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags();</pre></div>
+            <p>Plugin initialized without any options.</p>
+            <br>
+            <p class="demo-title">Plugin with custom tags :</p>
+            <div class="demo">
+              <input type="text" id="inputTags_d2" />
+            </div>
 
-<p>Source:</p>
-<div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags({
+            <div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#inputTags_d1<span class="pl-pds">'</span></span>).inputTags({
   tags<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>jQuery<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>tags<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>plugin<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Javascript<span class="pl-pds">'</span></span>],<br>  <span class="pl-c">max<span class="pl-k">:</span> <span class="pl-c1">8</span></span>
 });</pre></div>
-<p>The plugin has been initialized with 2 options:<br>&nbsp;&nbsp;&nbsp;<strong>tags</strong> -> Array of custom tags<br>&nbsp;&nbsp;&nbsp;<strong>max</strong> -> maximum number of tags that the user can enter</p>
+            <p>Plugin initialized with 2 options:<br>
+                &nbsp;&nbsp;&nbsp;- <strong>tags</strong> (Array) Custom tags<br>
+                &nbsp;&nbsp;&nbsp;- <strong>max</strong> (Boolean|Int) Maximum number of tags that the user can enter
+            </p>
+            <br>
+            <p class="demo-title">Plugin with only the autocomplete list values authorized:</p>
+            <div class="demo">
+              <input type="text" id="inputTags_d3" />
+            </div>
 
-<br>
+            <div class="highlight highlight-js"><pre class="rich-diff-level-zero">$(<span class="pl-s rich-diff-level-one"><span class="pl-pds">'</span>#inputTags_d3<span class="pl-pds">'</span></span>).inputTags({
+            tags<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>jQuery<span class="pl-pds">'</span></span>],
+    autocomplete<span class="pl-k rich-diff-level-one">:</span> {
+        values<span class="pl-k rich-diff-level-one">:</span> [<span class="pl-s rich-diff-level-one"><span class="pl-pds">'</span>tags<span class="pl-pds">'</span></span>, <span class="pl-s rich-diff-level-one"><span class="pl-pds">'</span>plugin<span class="pl-pds">'</span></span>, <span class="pl-s rich-diff-level-one"><span class="pl-pds">'</span>Javascript<span class="pl-pds">'</span></span>],
+        only<span class="pl-k rich-diff-level-one">:</span> <span class="pl-c1 rich-diff-level-one">true</span>
+    },
+    max<span class="pl-k rich-diff-level-one">:</span> <span class="pl-c1 rich-diff-level-one">3</span>,
+    <span class="pl-en rich-diff-level-one">create</span><span class="pl-k rich-diff-level-one">:</span> <span class="pl-k rich-diff-level-one">function</span>() {
+        <span class="pl-en rich-diff-level-one">console</span><span class="pl-c1 rich-diff-level-one">.log</span>(<span class="pl-s rich-diff-level-one"><span class="pl-pds">'</span>Tag added !<span class="pl-pds">'</span></span>);
+    }
+});</pre></div>
+            <p>Plugin initialized with 2 options:<br>
+                &nbsp;&nbsp;&nbsp;- <strong>tags</strong> (Array) Custom tags<br>
+                &nbsp;&nbsp;&nbsp;- <strong>autocomplete:values</strong> (Array) values for the autocomplete list<br>
+                &nbsp;&nbsp;&nbsp;- <strong>autocomplete:only</strong> (Boolean) Means that only values of the above list are authorized<br>
+                &nbsp;&nbsp;&nbsp;- <strong>create</strong> (Boolean|Function) Event called after adding a tag
+            </p>
+        </article>
 
-<h2 class="font center header-block"><a id="basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic usage</h2>
+        <br>
 
-<p><strong>Initialize plugin with custom tags</strong></p>
-<p>Allows you to add custom tags on plugin initialization.</p>
+        <article id="doc">
+            <h2 class="font center header-block"><a class="anchor" href="#doc" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h2>
+            <h2 class="font">Basic usage</h2>
 
-<div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags({
+            <p><strong>Initialize plugin with custom tags</strong></p>
+            <p>Allows you to add custom tags on plugin initialization.</p>
+
+            <div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags({
   tags<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>jQuery<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>tags<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>plugin<span class="pl-pds">'</span></span>] <span class="pl-c">// Custom tags list</span>
 });</pre></div>
 
-<br>
+            <br>
 
-<h2 class="font center header-block"><a id="advanced-usage" class="anchor" href="#advanced-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Advanced usage</h2>
+            <h2 class="font">Advanced usage</h2>
 
-<p><strong>Initialize plugin with tags autocomplete</strong></p>
-<p>Allows you to add a custom list from which the user can choose one or more tags.</p>
+            <p><strong>Initialize plugin with tags autocomplete</strong></p>
+            <p>Allows you to add a custom list from which the user can choose one or more tags.</p>
 
-<div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags({
-  autocomplete<span class="pl-k">:</span> {
-    values<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>Pellentesque<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>habitant<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>morbi<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>tristique<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>senectus<span class="pl-pds">'</span></span>] <span class="pl-c">// autocomplete list</span>
-  }
+            <div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#inputTags_d2<span class="pl-pds">'</span></span>).inputTags({
+    autocomplete<span class="pl-k">:</span> {
+        values<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>Pellentesque<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>habitant<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>morbi<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>tristique<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>senectus<span class="pl-pds">'</span></span>]
+    }
 });</pre></div>
 
-<br>
+            <br>
 
-<h2 class="font center header-block"><a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h2>
-<p><strong>Coming soon...</strong></p>
+            <h2 class="font">Methods</h2>
+            <p><strong>Coming soon...</strong></p>
 
-<br>
+            <br>
 
-<h2 class="font center header-block"><a id="events" class="anchor" href="#events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Events</h2>
+            <h2 class="font">Events</h2>
 
-<p><strong>Add events listener on plugin initialization</strong></p>
-<div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags({
+            <p><strong>Add events listener on plugin initialization</strong></p>
+            <div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags({
     <span class="pl-en">init</span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">$elem</span>) {
       <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Event called on plugin init<span class="pl-pds">'</span></span>, $elem);
     },
@@ -125,22 +167,19 @@
     }
 });</pre></div>
 
-<p><br>
-<strong>Add events after plugin initialization</strong></p>
+            <p><br>
+            <strong>Add events after plugin initialization</strong></p>
 
-<div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags().on(<span class="pl-s"><span class="pl-pds">'</span>change<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">$elem</span>) {
+            <div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags().on(<span class="pl-s"><span class="pl-pds">'</span>change<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">$elem</span>) {
   <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Event called on item change<span class="pl-pds">'</span></span>, $elem);
 });</pre></div>
 
-<p>same as:</p>
+            <p>same as:</p>
 
-<div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags(<span class="pl-s"><span class="pl-pds">'</span>event<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>change<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">$elem</span>) {
+            <div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#tags<span class="pl-pds">'</span></span>).inputTags(<span class="pl-s"><span class="pl-pds">'</span>event<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>change<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">$elem</span>) {
   <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Event called on item change<span class="pl-pds">'</span></span>, $elem);
 });</pre></div>
-
-      <!-- <footer class="site-footer">
-        <span class="site-footer-owner">Le plugin jQuery <a href="https://github.com/betaWeb/inputTags-jQuery-plugin" target="_blank">InputTags.js</a> est maintenu par <a href="https://github.com/betaWeb" target="_blank">betaWeb</a>.</span>
-      </footer> -->
+        </article>
 
     </section>
 

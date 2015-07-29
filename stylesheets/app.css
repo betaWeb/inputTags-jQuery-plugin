@@ -18,7 +18,7 @@ h5,
 h6,
 a,
 .color {
-  color: #19bc9c !important;
+  color: rgba(25, 188, 156, 0.95) !important;
 }
 h2 {
   margin-top: 1rem;
@@ -31,6 +31,10 @@ a:hover {
   cursor: pointer;
   color: rgba(25, 188, 156, 0.5) !important;
 }
+pre {
+  border: none !important;
+  border-radius: 0 !important;
+}
 .header-block {
   position: relative;
   margin: 3rem 0 !important;
@@ -41,9 +45,9 @@ a:hover {
   bottom: -16px;
   left: 50%;
   width: 32px;
-  height: 3px;
+  height: 2px;
   transform: translateX(-50%);
-  background-color: rgba(25, 188, 156, 0.5);
+  background-color: rgba(25, 188, 156, 0.95);
 }
 body {
   padding-top: 16px;
@@ -57,6 +61,16 @@ div.overlay {
   left: 0;
   background-color: rgba(44, 52, 51, 0.1);
   z-index: 9;
+}
+div.scroll-catcher {
+  position: fixed;
+  width: 100%;
+  height: 1px;
+  top: 25%;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(-25%);
 }
 /* PAGE HEADER */
 header {
@@ -91,6 +105,9 @@ header div.right-menu a {
 header div.right-menu a.menu-link {
   font-size: 14px;
   float: left;
+}
+header div.right-menu a.menu-link.is-active {
+  color: rgba(25, 188, 156, 0.95) !important;
 }
 header div.right-menu a:hover {
   color: rgba(44, 52, 51, 0.5) !important;
@@ -165,6 +182,18 @@ header div.mobile-menu-trigger {
   header div.right-menu {
     width: 100%;
   }
+}
+.demo-title:before {
+  content: '\f105';
+  margin: 0 8px;
+  vertical-align: baseline;
+  font-family: 'fontAwesome';
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(25, 188, 156, 0.95);
+}
+.demo {
+  margin-bottom: 8px;
 }
 input.inputTags-field {
   width: 8rem;
