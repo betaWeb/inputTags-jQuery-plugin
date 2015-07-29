@@ -243,13 +243,11 @@
               self._clean();
               self._fill();
             } else {
-              if (self._autocomplete()._isSet()) {
-                if (self._autocomplete()._get('only')) {
-                  if ($.inArray(value, self._autocomplete()._get('values')) < 0) {
-                    self._autocomplete()._hide();
-                    self._errors('autocomplete_only');
-                    return false;
-                  }
+              if (self._autocomplete()._isSet() && self._autocomplete()._get('only')) {
+                if ($.inArray(value, self._autocomplete()._get('values')) < 0) {
+                  self._autocomplete()._hide();
+                  self._errors('autocomplete_only');
+                  return false;
                 }
               }
 
@@ -289,8 +287,7 @@
         */
         self.edit = function() {
           self.$list.on('click', '.' + self.ITEM_CLASS, function(e) {
-
-            if ($(e.target).hasClass('close-item') || false === self.options.editable) {
+            if ($(e.target).hasClass('close-item') || false === self.options.editable || (self._autocomplete()._isSet() && self._autocomplete()._get('only'))) {
               self._cancel();
               return true;
             }
