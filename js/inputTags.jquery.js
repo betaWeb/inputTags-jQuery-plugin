@@ -439,7 +439,8 @@
               self.$autocomplete = $('<ul>').addClass(self.AUTOCOMPLETE_LIST_CLASS);
 
               self._autocomplete()._get('values').forEach(function(v, k) {
-                var $item = $.inArray(v, self.tags) >= 0 ? $(self.AUTOCOMPLETE_ITEM_CONTENT.replace('%s', v)).addClass('is-disabled') : $(self.AUTOCOMPLETE_ITEM_CONTENT.replace('%s', v));
+                var li    = self.AUTOCOMPLETE_ITEM_CONTENT.replace('%s', v);
+                var $item = $.inArray(v, self.tags) >= 0 ? $(li).addClass('is-disabled') : $(li);
                 $item.appendTo(self.$autocomplete);
               });
 
