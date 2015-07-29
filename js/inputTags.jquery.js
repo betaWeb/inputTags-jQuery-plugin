@@ -7,9 +7,6 @@
       };
     };
 
-    var id = $(this).attr('data-uniqid');
-    var _instance = window.inputTags.instances[id];
-
     window.inputTags.methods = {
       tags: function(element, callback) {
         if (element) {
@@ -145,7 +142,7 @@
           /* initialization */
           self.build();
           self.fill();
-          self.addOrEdit();
+          self.save();
           self.edit();
           self.destroy();
           self._autocomplete()._init();
@@ -193,7 +190,9 @@
         */
         self._fill = function() {
           self.tags.forEach(function(value, i) {
-            if (self._validate(value, false)) {
+            var validate = self._validate(value, false);
+
+            if (true === validate || ('max' === validate && i + 1 <= self.options.max)) {
               self._buildItem(value);
             }
           });
@@ -209,7 +208,7 @@
         /*
         * Ajoute ou édite un tag en fonction de la touche sur laquelle l'utilisateur appuie
         */
-        self.addOrEdit = function() {
+        self.save = function() {
           self.$input.on('keyup', function(e) {
             e.preventDefault();
 
@@ -545,7 +544,7 @@
           }
 
           if (type.length > 0) {
-            return alert ? self._errors(type) : false;
+            return alert ? self._errors(type) : type;
           }
 
           return true;
@@ -690,9 +689,16 @@
       };
 
     } else if (window.inputTags.methods[options]) {
+      var id = $(this).attr('data-uniqid');
+      var _instance = window.inputTags.instances[id];
+
+      if ('indefined' === typeof _instance) {
+        return $.error("[undefined instance] No inputTags instance found.");
+      }
+
       return window.inputTags.methods[options].apply(this, Array.prototype.slice.call(arguments, 1));
     } else {
-      $.error("[undefined method] Erreur: La méthode [" + options + "] que vous tentez d'appeler n'existe pas.");
+      $.error("[undefined method] The method [" + options + "] does not exists.");
     }
   };
 
