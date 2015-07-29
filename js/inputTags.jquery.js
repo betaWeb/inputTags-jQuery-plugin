@@ -153,8 +153,8 @@
         };
 
         /*
-         * COnstruit le squelette HTML du plugin
-         */
+        * COnstruit le squelette HTML du plugin
+        */
         self.build = function() {
           self.$html = $('<div>').addClass(self.LIST_CLASS);
           self.$input = $('<input>').attr({
@@ -175,8 +175,8 @@
         };
 
         /*
-         * Initialise la liste des tags si des tags ont été passé en option, return false sinon
-         */
+        * Initialise la liste des tags si des tags ont été passé en option, return false sinon
+        */
         self.fill = function() {
           if (self.options.tags.length < 0) {
             return false;
@@ -189,8 +189,8 @@
         };
 
         /*
-         * Appelle la fonction _buildItem() si le tag est conforme
-         */
+        * Appelle la fonction _buildItem() si le tag est conforme
+        */
         self._fill = function() {
           self.tags.forEach(function(value, i) {
             if (self._validate(value, false)) {
@@ -200,15 +200,15 @@
         };
 
         /*
-         * Supprime tous les éléments HTML représentant un tag
-         */
+        * Supprime tous les éléments HTML représentant un tag
+        */
         self._clean = function() {
           $('.' + self.ITEM_CLASS, self.$list).remove();
         };
 
         /*
-         * Ajoute ou édite un tag en fonction de la touche sur laquelle l'utilisateur appuie
-         */
+        * Ajoute ou édite un tag en fonction de la touche sur laquelle l'utilisateur appuie
+        */
         self.addOrEdit = function() {
           self.$input.on('keyup', function(e) {
             e.preventDefault();
@@ -254,8 +254,11 @@
               }
 
               if (self._exists(value)) {
+                self.$input.removeClass('is-autocomplete');
                 self._errors('exists');
+
                 var $tag = $('[data-tag="' + value + '"]', self.$list);
+
                 $tag.addClass('is-exists');
 
                 setTimeout(function() {
@@ -282,8 +285,8 @@
         };
 
         /*
-         * Initialise le champ d'édition lors du clic sur l'élément HTML représentant un tag
-         */
+    * Initialise le champ d'édition lors du clic sur l'élément HTML représentant un tag
+        */
         self.edit = function() {
           self.$list.on('click', '.' + self.ITEM_CLASS, function(e) {
 
@@ -307,8 +310,8 @@
         };
 
         /*
-         * Supprime un tag lors du clic sur l'élément HTML représentant un tag
-         */
+    * Supprime un tag lors du clic sur l'élément HTML représentant un tag
+        */
         self.destroy = function() {
           $('.' + self.ITEM_CLASS, self.$list).off('click').on('click', '.close-item', function() {
 
@@ -332,8 +335,8 @@
         };
 
         /*
-         * Construit l'objet jQuery représentant un tag et l'injecte dans la liste HTML
-         */
+    * Construit l'objet jQuery représentant un tag et l'injecte dans la liste HTML
+        */
         self._buildItem = function(value) {
           var $content = $(self.ITEM_CONTENT.replace('%s', value));
           var $item = $('<span>').addClass(self.ITEM_CLASS + ' is-closed').attr('data-tag', value).html($content);
@@ -344,16 +347,16 @@
         };
 
         /*
-         * Retourne l'index en fonction du tag si celui-ci est présent dans l'array self.tags, false sinon 
-         */
+    * Retourne l'index en fonction du tag si celui-ci est présent dans l'array self.tags, false sinon 
+        */
         self._getIndex = function(value) {
           return self.tags.indexOf(value);
         };
 
         /*
-         * Supprime les tags en trop si self.options.tags.length > self.options.max
-         * Concatène les tags passés en paramètre par l'utilisateur.
-         */
+    * Supprime les tags en trop si self.options.tags.length > self.options.max
+    * Concatène les tags passés en paramètre par l'utilisateur.
+        */
         self._concatenate = function() {
           if (!'boolean' === typeof self.options.max || self.options.max > 0) {
             if (self.options.tags.length > self.options.max) {
@@ -365,8 +368,8 @@
         };
 
         /*
-         * Insert item dans l'array self.tags
-         */
+    * Insert item dans l'array self.tags
+        */
         self._insert = function(item) {
           self.tags.push(item);
 
@@ -374,8 +377,8 @@
         };
 
         /*
-         * Remplace old_value par new_value dans l'array self.tags
-         */
+    * Remplace old_value par new_value dans l'array self.tags
+        */
         self._update = function(old_value, new_value) {
           var index = self._getIndex(old_value);
           self.tags[index] = new_value;
@@ -384,8 +387,8 @@
         };
 
         /*
-         * Supprime l'élément corrspondant à value dans l'array self.tags
-         */
+    * Supprime l'élément corrspondant à value dans l'array self.tags
+        */
         self._pop = function(value) {
           var index = self._getIndex(value);
 
@@ -399,8 +402,8 @@
         };
 
         /*
-         * Réinitialise le champ de saisie
-         */
+    * Réinitialise le champ de saisie
+        */
         self._cancel = function() {
           $('.' + self.ITEM_CLASS).removeClass('is-edit');
 
@@ -412,8 +415,8 @@
         };
 
         /*
-         * retourne un objet comprennant différentes méthodes pour l'autocompletion
-         */
+    * retourne un objet comprennant différentes méthodes pour l'autocompletion
+        */
         self._autocomplete = function() {
           var values = self.options.autocomplete.values;
 
@@ -436,12 +439,14 @@
               self.$autocomplete = $('<ul>').addClass(self.AUTOCOMPLETE_LIST_CLASS);
 
               self._autocomplete()._get('values').forEach(function(v, k) {
-                var $item = $.inArray(v, self.tags) > 0 ? $(self.AUTOCOMPLETE_ITEM_CONTENT.replace('%s', v)).addClass('is-disabled') : $(self.AUTOCOMPLETE_ITEM_CONTENT.replace('%s', v));
+                var li    = self.AUTOCOMPLETE_ITEM_CONTENT.replace('%s', v);
+                var $item = $.inArray(v, self.tags) >= 0 ? $(li).addClass('is-disabled') : $(li);
                 $item.appendTo(self.$autocomplete);
               });
 
               self.$autocomplete.off('click').on('click', '.' + self.AUTOCOMPLETE_ITEM_CLASS, function() {
                 var $item = $(this);
+
                 if ($item.hasClass('is-disabled')) {
                   return false;
                 }
@@ -487,15 +492,15 @@
         };
 
         /*
-         * Met à jour l'attribut value de l'input sur lequel est bindé le plugin
-         */
+    * Met à jour l'attribut value de l'input sur lequel est bindé le plugin
+        */
         self._updateValue = function() {
           self.$element.attr('value', self.tags.join(','));
         };
-
+        
         /*
-         * Définit les events attaché au focus sur le champ de saisie d'un tag
-         */
+    * Définit les events attaché au focus sur le champ de saisie d'un tag
+        */
         self._focus = function() {
           self.$input.on('focus', function() {
             self._bindEvent('focus');
@@ -505,20 +510,20 @@
             }
           });
         };
-
+        
         /*
-         * return arr converti en objet
-         */
+    * return arr converti en objet
+        */
         self._toObject = function(arr) {
           return arr.reduce(function(o, v, i) {
             o[i] = v;
             return o;
           }, {});
         };
-
+        
         /*
-         * Valide la saisie de l'utilisateur en fonction de différents paramètres passés en option
-         */
+    * Valide la saisie de l'utilisateur en fonction de différents paramètres passés en option
+        */
         self._validate = function(value, alert) {
           var type = '';
 
@@ -548,17 +553,17 @@
 
           return true;
         };
-
+        
         /*
-         * return true si value se trouve dans l'array self.tags, false sinon
-         */
+    * return true si value se trouve dans l'array self.tags, false sinon
+        */
         self._exists = function(value) {
           return $.inArray(value, self.tags) >= 0;
         }
-
+        
         /*
-         * Récupère le message en fonction du type passé en paramètres
-         */
+    * Récupère le message en fonction du type passé en paramètres
+        */
         self._errors = function(type) {
           if (0 === type.length) {
             return false;
@@ -572,10 +577,10 @@
 
           return false;
         };
-
+        
         /*
-         * Affiche la/les erreur(s) s'il y en a
-         */
+    * Affiche la/les erreur(s) s'il y en a
+        */
         self._displayErrors = function(error, type) {
           var $error = $(self.ERROR_CONTENT.replace('%s', error)).attr('data-error', type);
           var timeout = self.options.errors.timeout;
@@ -598,10 +603,10 @@
             self._collapseErrors();
           }, timeout);
         };
-
+        
         /*
-         * Efface la/les erreur(s) s'il y en a
-         */
+    * Efface la/les erreur(s) s'il y en a
+        */
         self._collapseErrors = function($elem) {
 
           var $obj = $elem ? $elem : $('.' + self.ERROR_CLASS);
@@ -610,31 +615,31 @@
             $obj.remove();
           });
         };
-
+        
         /*
-         * Return une instance de inputTags() en fonction de son ID
-         */
+    * Return une instance de inputTags() en fonction de son ID
+        */
         self._getInstance = function() {
           return window.inputTags.instances[self.UNIQID];
         };
-
+        
         /*
-         * Push l'instance value dans l'array window.inputTags.instances
-         */
+    * Push l'instance value dans l'array window.inputTags.instances
+        */
         self._setInstance = function(value) {
           window.inputTags.instances[self.UNIQID] = self;
         };
-
+        
         /*
-         * Return true si elem est défini dans self.options, false sinon
-         */
+    * Return true si elem est défini dans self.options, false sinon
+        */
         self._isSet = function(elem) {
           return 'undefined' === typeof self.options[elem] || false === self.options[elem] || self.options[elem].length <= 0 ? false : true;
         };
-
+        
         /*
-         * Appelle la méthode method_name si celle-ci est définie dans self.options, return false sinon
-         */
+    * Appelle la méthode method_name si celle-ci est définie dans self.options, return false sinon
+        */
         self._callMethod = function(method_name, self) {
           if ('undefined' === typeof self.options[method_name] || 'function' !== typeof self.options[method_name]) {
             return false;
