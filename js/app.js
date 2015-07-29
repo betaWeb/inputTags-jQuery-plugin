@@ -44,7 +44,7 @@ var app = function() {
 
 		$(window).scroll(function() {
 			var $win 	  = $(this);
-			var scrollTop = $win.scrollTop() + ($win.height() / 4);
+			var scrollTop = $win.scrollTop() + ($win.height() / 4) - 32;
 
 			for (var i in sections) {
 				var $section = sections[i];
