@@ -13,9 +13,8 @@ var app = function() {
 
 		/* Demo 2 initialization */
 		$('#inputTags_d3').inputTags({
-			tags: ['jQuery'],
 			autocomplete: {
-				values: ['tags', 'plugin', 'Javascript'],
+				values: ['jQuery', 'tags', 'plugin', 'Javascript'],
 				only: true
 			},
 			max: 3,
