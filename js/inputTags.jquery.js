@@ -445,23 +445,24 @@
                 $item.appendTo(self.$autocomplete);
               });
 
-              self.$autocomplete.off('click').on('click', '.' + self.AUTOCOMPLETE_ITEM_CLASS, function() {
-                var $item = $(this);
+              self._autocomplete()._bindClick();
 
-                if ($item.hasClass('is-disabled')) {
+              self.$input.on('blur', function() {
+                self._autocomplete()._hide();
+              });
+            },
+            _bindClick: function() {
+              $(self.$autocomplete).off('click').on('click', '.' + self.AUTOCOMPLETE_ITEM_CLASS, function(e) {
+                if ($(e.target).hasClass('is-disabled')) {
                   return false;
                 }
 
-                self.$input.addClass('is-autocomplete').val($item.text());
+                self.$input.addClass('is-autocomplete').val($(this).text());
                 self._autocomplete()._hide();
 
                 var e = $.Event("keyup");
                 e.which = 13;
                 self.$input.trigger(e);
-              });
-
-              self.$input.on('blur', function() {
-                self._autocomplete()._hide();
               });
             },
             _show: function() {
@@ -477,6 +478,7 @@
                 .insertAfter(self.$input);
 
               setTimeout(function() {
+                self._autocomplete()._bindClick();
                 self.$autocomplete.addClass('is-active');
               }, 100);
             },
