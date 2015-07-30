@@ -131,7 +131,12 @@
 
         /* Variables */
         self.options = options;
+        self.keys = [13, 188, 27];
         self.tags = [];
+
+        if (self.options.keys.length > 0) {
+          self.keys = self.keys.concat(self.options.keys);
+        }
 
         self.init = function() {
           self.addClass(self.ELEMENT_CLASS).attr('data-uniqid', self.UNIQID);
@@ -215,7 +220,7 @@
             var key = e.keyCode || e.which;
             var value = self.$input.val().trim();
 
-            if ($.inArray(key, self.options.keys) < 0) {
+            if ($.inArray(key, self.keys) < 0) {
               return false;
             }
 
@@ -704,7 +709,7 @@
 
   $.fn.inputTags.defaults = {
     tags: [],
-    keys: [13, 188, 27],
+    keys: [],
     minLength: 2,
     maxLength: 30,
     max: 6,
