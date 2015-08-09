@@ -45,16 +45,9 @@ div.inputTags-list span.inputTags-item {
   text-align: center;
   color: #ffffff;
   opacity: 1;
-  transition-duration: 0.3s;
-  transform-origin: center;
-  transform: scale(1);
 }
 div.inputTags-list span.inputTags-item.is-edit {
   display: none;
-}
-div.inputTags-list span.inputTags-item.is-closed {
-  opacity: 0;
-  transform: scale(0);
 }
 div.inputTags-list span.inputTags-item.is-hidden {
   display: none !important;
