@@ -29,10 +29,6 @@ div.inputTags-list span.inputTags-item {
 div.inputTags-list span.inputTags-item.is-edit {
   display: none;
 }
-div.inputTags-list span.inputTags-item.is-closed {
-  opacity: 0;
-  transform: scale(0);
-}
 div.inputTags-list span.inputTags-item.is-hidden {
   display: none !important;
 }
@@ -81,16 +77,9 @@ div.inputTags-list ul.inputTags-autocomplete-list {
   background-color: #ffffff;
   border: 1px solid #dddddd;
   border-radius: 4px;
-  transform: scaleY(0);
-  transform-origin: 50% 0;
-  transition-duration: 0.2s;
   overflow-y: auto;
   z-index: 100;
   opacity: 0;
-}
-div.inputTags-list ul.inputTags-autocomplete-list.is-active {
-  opacity: 1;
-  transform: scaleY(1);
 }
 div.inputTags-list ul.inputTags-autocomplete-list li {
   height: 32px;
