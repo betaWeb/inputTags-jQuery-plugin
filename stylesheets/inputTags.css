@@ -3,6 +3,29 @@
 * {
   box-sizing: border-box;
 }
+.color {
+  color: #19bc9c !important;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  background-color: #dddddd;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 32px;
+}
+div.container {
+  display: block;
+  width: 50%;
+  margin: 32px auto;
+  padding: 16px 32px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
 div.inputTags-list {
   display: inline-block;
   width: 100%;
@@ -22,9 +45,6 @@ div.inputTags-list span.inputTags-item {
   text-align: center;
   color: #ffffff;
   opacity: 1;
-  transition-duration: 0.3s;
-  transform-origin: center;
-  transform: scale(1);
 }
 div.inputTags-list span.inputTags-item.is-edit {
   display: none;
@@ -77,9 +97,16 @@ div.inputTags-list ul.inputTags-autocomplete-list {
   background-color: #ffffff;
   border: 1px solid #dddddd;
   border-radius: 4px;
+  transform: scaleY(0);
+  transform-origin: 50% 0;
+  transition-duration: 0.2s;
   overflow-y: auto;
   z-index: 100;
   opacity: 0;
+}
+div.inputTags-list ul.inputTags-autocomplete-list.is-active {
+  opacity: 1;
+  transform: scaleY(1);
 }
 div.inputTags-list ul.inputTags-autocomplete-list li {
   height: 32px;
