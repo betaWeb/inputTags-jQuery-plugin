@@ -180,7 +180,7 @@
         * Initialise la liste des tags si des tags ont été passé en option, return false sinon
         */
         self.fill = function() {
-          if (self.options.tags.length < 0) {
+          if (0 === self.options.tags.length) {
             return false;
           }
 
