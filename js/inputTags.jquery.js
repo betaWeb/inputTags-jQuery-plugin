@@ -115,18 +115,18 @@
         var self = $(this);
 
         /* Constantes */
-        self.UNIQID = Math.round(Date.now() / (Math.random() * (548 - 54) - 54));
+        self.UNIQID        = Math.round(Date.now() / (Math.random() * (548 - 54) - 54));
         self.DEFAULT_CLASS = 'inputTags';
         self.ELEMENT_CLASS = self.DEFAULT_CLASS + '-' + self.UNIQID;
-        self.LIST_CLASS = self.DEFAULT_CLASS + '-list';
-        self.ITEM_CLASS = self.DEFAULT_CLASS + '-item';
-        self.ITEM_CONTENT = '<span class="value" title="Cliquez pour éditer">%s</span><i class="close-item">&times</i>';
-        self.FIELD_CLASS = self.DEFAULT_CLASS + '-field';
-        self.ERROR_CLASS = self.DEFAULT_CLASS + '-error';
+        self.LIST_CLASS    = self.DEFAULT_CLASS + '-list';
+        self.ITEM_CLASS    = self.DEFAULT_CLASS + '-item';
+        self.ITEM_CONTENT  = '<span class="value" title="Cliquez pour éditer">%s</span><i class="close-item">&times</i>';
+        self.FIELD_CLASS   = self.DEFAULT_CLASS + '-field';
+        self.ERROR_CLASS   = self.DEFAULT_CLASS + '-error';
         self.ERROR_CONTENT = '<p class="' + self.ERROR_CLASS + '">%s</p>';
-
-        self.AUTOCOMPLETE_LIST_CLASS = self.DEFAULT_CLASS + '-autocomplete-list';
-        self.AUTOCOMPLETE_ITEM_CLASS = self.DEFAULT_CLASS + '-autocomplete-item';
+        
+        self.AUTOCOMPLETE_LIST_CLASS   = self.DEFAULT_CLASS + '-autocomplete-list';
+        self.AUTOCOMPLETE_ITEM_CLASS   = self.DEFAULT_CLASS + '-autocomplete-item';
         self.AUTOCOMPLETE_ITEM_CONTENT = '<li class="' + self.AUTOCOMPLETE_ITEM_CLASS + '">%s</li>';
 
         /* Variables */
@@ -142,7 +142,7 @@
           self.addClass(self.ELEMENT_CLASS).attr('data-uniqid', self.UNIQID);
 
           self.$element = $('.' + self.ELEMENT_CLASS);
-          self.$element.hide().attr('value', '');
+          self.$element.hide();
 
           /* initialization */
           self.build();
@@ -180,6 +180,8 @@
         * Initialise la liste des tags si des tags ont été passé en option, return false sinon
         */
         self.fill = function() {
+          self._getDefaultValues();
+
           if (0 === self.options.tags.length) {
             return false;
           }
@@ -366,6 +368,14 @@
           }
 
           self.tags = self.tags.concat(self.options.tags);
+        };
+
+        self._getDefaultValues = function() {
+          if (self.$element.val().length > 0) {
+            self.tags = self.tags.concat(self.$element.val().split(','));
+          } else {
+            self.$element.attr('value', '');
+          }
         };
 
         /*
