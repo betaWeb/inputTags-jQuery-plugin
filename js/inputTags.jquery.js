@@ -182,7 +182,7 @@
         self.fill = function() {
           self._getDefaultValues();
 
-          if (0 === self.options.tags.length) {
+          if (0 === self.options.tags) {
             return false;
           }
 
@@ -469,6 +469,7 @@
 
                 self.$input.addClass('is-autocomplete').val($(this).text());
                 self._autocomplete()._hide();
+                self._bindEvent('autocompleteTagSelect');
 
                 var e = $.Event("keyup");
                 e.which = 13;
@@ -733,6 +734,7 @@
     selected: false,
     unselected: false,
     change: false,
+    autocompleteTagSelect: false,
     editable: true,
     autocomplete: {
       values: [],

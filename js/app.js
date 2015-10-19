@@ -25,6 +25,9 @@ jQuery(document).ready(function($) {
     },
     change: function(elem) {
       $('.results').empty().html('<strong>Tags:</strong> ' + elem.tags.join(' - '));
+    },
+    autocompleteTagSelect: function(elem) {
+      console.info('autocompleteTagSelect');
     }
   });
 
