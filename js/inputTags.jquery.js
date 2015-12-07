@@ -710,7 +710,7 @@
       var id = $(this).attr('data-uniqid');
       var _instance = window.inputTags.instances[id];
 
-      if ('indefined' === typeof _instance) {
+      if ('undefined' === typeof _instance) {
         return $.error("[undefined instance] No inputTags instance found.");
       }
 
