@@ -764,6 +764,7 @@
             minLength: 'Attention, votre tag doit avoir au minimum %s caractères.',
             maxLength: 'Attention, votre tag ne doit pas dépasser %s caractères.',
             max: 'Attention, le nombre de tags ne doit pas dépasser %s.',
+            email: 'Attention, l\'adresse email que vous avez entré n\'est pas valide',
             exists: 'Attention, ce tag existe déjà !',
             autocomplete_only: 'Attention, vous devez sélectionner une valeur dans la liste.',
             timeout: 8000
