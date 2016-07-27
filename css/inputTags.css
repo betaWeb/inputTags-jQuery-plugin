@@ -33,18 +33,28 @@ div.inputTags-list {
   border: 1px solid rgba(25, 188, 156, 0.35);
   background-color: #f9f9f9;
   box-shadow: 1px 2px 2px rgba(221, 221, 221, 0.2);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
   border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
 div.inputTags-list span.inputTags-item {
   position: relative;
   display: inline-block;
   margin: 2px;
   padding: 3px 22px 4px 8px;
-  border-radius: 3px;
   background-color: #19BC9C;
   text-align: center;
   color: #fff;
   opacity: 1;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
 div.inputTags-list span.inputTags-item.is-edit {
   display: none;
@@ -66,9 +76,19 @@ div.inputTags-list span.inputTags-item i {
   cursor: pointer;
   z-index: 10;
   font-weight: 400;
-  transition: color 0.2s;
   font-family: sans-serif;
-  transform: translateY(-50%);
+  line-height: 1;
+  font-style: normal;
+  -webkit-transition: color 0.2s;
+  -khtml-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  -webkit-transform: translateY(-50%);
+  -khtml-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
 }
 div.inputTags-list span.inputTags-item i:hover {
   color: #e74c3c;
@@ -86,7 +106,12 @@ div.inputTags-list input.inputTags-field.is-edit {
   margin: 0 2px;
   padding: 4px 8px 3px 8px;
   border: 1px dashed #c4c4c4;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
   border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
 div.inputTags-list ul.inputTags-autocomplete-list {
   position: absolute;
@@ -96,26 +121,55 @@ div.inputTags-list ul.inputTags-autocomplete-list {
   list-style-type: none;
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  transform: scaleY(0);
-  transform-origin: 50% 0;
-  transition-duration: 0.2s;
   overflow-y: auto;
   z-index: 100;
   opacity: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-transform: scaleY(0);
+  -khtml-transform: scaleY(0);
+  -moz-transform: scaleY(0);
+  -ms-transform: scaleY(0);
+  -o-transform: scaleY(0);
+  -webkit-transform-origin: 50% 0;
+  -khtml-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  -ms-transform-origin: 50% 0;
+  -o-transform-origin: 50% 0;
+  -webkit-transition-duration: 0.2s;
+  -khtml-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -ms-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
 }
 div.inputTags-list ul.inputTags-autocomplete-list.is-active {
   opacity: 1;
-  transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+  -khtml-transform: scaleY(1);
+  -moz-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  -o-transform: scaleY(1);
 }
 div.inputTags-list ul.inputTags-autocomplete-list li {
   height: 32px;
   line-height: 32px;
   padding: 0 16px;
-  transition-duration: 0.3s;
   cursor: pointer;
   border-bottom: 1px solid #ddd;
-  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.3s;
+  -khtml-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.2s;
+  -khtml-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -ms-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
 }
 div.inputTags-list ul.inputTags-autocomplete-list li:last-child {
   border: none;
@@ -135,8 +189,13 @@ p.inputTags-error {
   padding: 0.5em 1em;
   color: #fff;
   background-color: rgba(231, 76, 60, 0.7);
-  border-radius: 4px;
   cursor: pointer;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
 p.inputTags-error:first-of-type {
   margin-top: 8px;
@@ -146,6 +205,10 @@ p.inputTags-error:after {
   content: "\000D7";
   top: 50%;
   right: 0.5em;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -khtml-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   font-size: 28px;
 }
