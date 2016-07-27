@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 .color {
-  color: #19bc9c !important;
+  color: #19BC9C !important;
 }
 html,
 body {
@@ -12,7 +12,7 @@ body {
   height: 100%;
   margin: 0;
   font-family: 'Ubuntu Condensed', sans-serif;
-  background-color: #dddddd;
+  background-color: #ddd;
 }
 h1 {
   text-align: center;
@@ -23,7 +23,7 @@ div.container {
   width: 50%;
   margin: 32px auto;
   padding: 16px 32px;
-  background-color: #ffffff;
+  background-color: #fff;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
 div.inputTags-list {
@@ -41,9 +41,9 @@ div.inputTags-list span.inputTags-item {
   margin: 2px;
   padding: 3px 22px 4px 8px;
   border-radius: 3px;
-  background-color: #19bc9c;
+  background-color: #19BC9C;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
   opacity: 1;
 }
 div.inputTags-list span.inputTags-item.is-edit {
@@ -94,8 +94,8 @@ div.inputTags-list ul.inputTags-autocomplete-list {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
+  background-color: #fff;
+  border: 1px solid #ddd;
   border-radius: 4px;
   transform: scaleY(0);
   transform-origin: 50% 0;
@@ -114,15 +114,15 @@ div.inputTags-list ul.inputTags-autocomplete-list li {
   padding: 0 16px;
   transition-duration: 0.3s;
   cursor: pointer;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
   transition-duration: 0.2s;
 }
 div.inputTags-list ul.inputTags-autocomplete-list li:last-child {
   border: none;
 }
 div.inputTags-list ul.inputTags-autocomplete-list li:hover {
-  background-color: #19bc9c;
-  color: #ffffff;
+  background-color: #19BC9C;
+  color: #fff;
 }
 div.inputTags-list ul.inputTags-autocomplete-list li.is-disabled {
   cursor: default;
@@ -133,7 +133,7 @@ p.inputTags-error {
   position: relative;
   margin: 0;
   padding: 0.5em 1em;
-  color: #ffffff;
+  color: #fff;
   background-color: rgba(231, 76, 60, 0.7);
   border-radius: 4px;
   cursor: pointer;
