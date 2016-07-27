@@ -510,7 +510,7 @@
                             return self.options.autocomplete[key];
                         },
                         _exists: function () {
-                            return 'undefined' !== typeof self.$autocomplete;
+                            return undefined !== self.$autocomplete;
                         }
                     };
                 };
@@ -553,7 +553,7 @@
 
                     switch (true) {
                         case !value:
-                        case 'undefined' === typeof value:
+                        case undefined === value:
                         case 0 === value.length:
                             self._cancel();
                             type = 'empty';
@@ -665,14 +665,14 @@
                  * Return true si elem est défini dans self.options, false sinon
                  */
                 self._isSet = function (elem) {
-                    return 'undefined' === typeof self.options[elem] || false === self.options[elem] || self.options[elem].length <= 0 ? false : true;
+                    return undefined === self.options[elem] || false === self.options[elem] || self.options[elem].length <= 0 ? false : true;
                 };
 
                 /*
                  * Appelle la méthode method_name si celle-ci est définie dans self.options, return false sinon
                  */
                 self._callMethod = function (method_name, self) {
-                    if ('undefined' === typeof self.options[method_name] || 'function' !== typeof self.options[method_name]) {
+                    if (undefined === self.options[method_name] || 'function' !== typeof self.options[method_name]) {
                         return false;
                     }
 
@@ -727,7 +727,7 @@
             var id = $(this).attr('data-uniqid');
             var _instance = window.inputTags.instances[id];
 
-            if ('undefined' === typeof _instance) {
+            if (undefined === _instance) {
                 return $.error("[undefined instance] No inputTags instance found.");
             }
 
