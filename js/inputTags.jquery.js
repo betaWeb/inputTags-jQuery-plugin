@@ -465,9 +465,11 @@
 
                             self._autocomplete()._bindClick();
 
-                            self.$input.on('blur', function () {
-                                self._autocomplete()._hide();
-                            });
+                            $(document)
+                                .not(self.$autocomplete)
+                                .on('click', function () {
+                                    self._autocomplete()._hide();
+                                });
                         },
                         _bindClick: function () {
                             $(self.$autocomplete).off('click').on('click', '.' + self.AUTOCOMPLETE_ITEM_CLASS, function (e) {
