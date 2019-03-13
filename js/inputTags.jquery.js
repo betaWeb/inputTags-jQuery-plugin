@@ -382,7 +382,7 @@
                     if (self.$element.val().length > 0) {
                         self.tags = self.tags.concat(self.$element.val().split(','));
                     } else {
-                        self.$element.attr('value', '');
+                        self.$element.prop('value', '');
                     }
                 };
 
@@ -519,7 +519,7 @@
                  * Met à jour l'attribut value de l'input sur lequel est bindé le plugin
                  */
                 self._updateValue = function () {
-                    self.$element.attr('value', self.tags.join(','));
+                    self.$element.prop('value', self.tags.join(','));
                 };
 
                 /*
