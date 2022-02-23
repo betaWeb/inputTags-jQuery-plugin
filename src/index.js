@@ -231,6 +231,9 @@
                         var value = self.$input.val().trim();
 
                         if ($.inArray(key, self.keys) < 0) {
+                            self._autocomplete._init(true);
+                            self._autocomplete._show();
+
                             return false;
                         }
 
@@ -487,31 +490,44 @@
                     /**
                      * Init autocomplete
                      *
+                     * @param {boolean | undefined} filter
                      * @returns {boolean | void}
                      */
-                    _init: function () {
+                    _init: function (filter) {
                         if (!self._autocomplete._isSet()) {
                             return false;
                         }
 
-                        self._autocomplete._build();
+                        self._autocomplete._build(filter);
                     },
 
                     /**
                      * Build autocomplete HTML list
                      *
+                     * @param {boolean | undefined} filter
                      * @returns {void}
                      */
-                    _build: function () {
+                    _build: function (filter) {
+                        var value = self.$input.val().trim().toLowerCase();
+
                         if (self._autocomplete._exists()) {
                             self.$autocomplete.remove();
                         }
 
                         self.$autocomplete = $('<ul>').addClass(self.AUTOCOMPLETE_LIST_CLASS);
 
-                        self._autocomplete._get('values').forEach(function (v, k) {
+                        self._autocomplete._get('values').forEach(function (v) {
                             var li = self.AUTOCOMPLETE_ITEM_CONTENT.replace('%s', v);
-                            var $item = $.inArray(v, self.tags) >= 0 ? $(li).addClass('is-disabled') : $(li);
+                            var $item = $(li)
+
+                            if ($.inArray(v, self.tags) >= 0) {
+                                $item.addClass('is-disabled')
+                            }
+
+                            if (filter && value.length > 0 && !v.toLowerCase().startsWith(value)) {
+                                $item.css({ display: 'none' })
+                            }
+
                             $item.appendTo(self.$autocomplete);
                         });
 
@@ -616,6 +632,7 @@
                         self._bindEvent('focus');
 
                         if (self._autocomplete._isSet() && !self.$input.hasClass('is-autocomplete') && !self.$input.hasClass('is-edit')) {
+                            self._autocomplete._build();
                             self._autocomplete._show();
                         }
                     });
