@@ -132,7 +132,7 @@
 
                 /* Variables */
                 self.options = options;
-                self.keys = [13, 188, 27];
+                self.keys = ['Enter', ',', 'Escape'];
                 self.tags = [];
 
                 if (self.options.keys.length > 0) {
@@ -220,20 +220,20 @@
                     self.$input.on('keyup', function (e) {
                         e.preventDefault();
 
-                        var key = e.keyCode || e.which;
+                        var key = e.key;
                         var value = self.$input.val().trim();
 
                         if ($.inArray(key, self.keys) < 0) {
                             return false;
                         }
 
-                        if (27 === key) {
+                        if ('Escape' === key) {
                             self._cancel();
 
                             return false;
                         }
 
-                        value = 188 === key ? value.slice(0, -1) : value;
+                        value = ',' === key ? value.slice(0, -1) : value;
 
                         if (!self._validate(value, true)) {
                             return false;
@@ -482,7 +482,7 @@
                                 self._bindEvent('autocompleteTagSelect');
 
                                 var e = $.Event("keyup");
-                                e.which = 13;
+                                e.key = 'Enter';
                                 self.$input.trigger(e);
                             });
                         },
